@@ -3,7 +3,7 @@ The flow for Schema Backup execution is as list below.
 
 schema.sh --> Schema_Backup.yml --> Schema_backup.sh --> mail_schemabkp.txt
 
-schema.sh - Contains the Playbook details with pre deleting the old logs files and preparing Mailer format
+schema.sh - Contains the Playbook details with pre deleting the old logs files and prepars mail_schemabkp.txt Mailer format file
 
 Schema_Backup.yml - Contains the server details on which this job to be executed.
 
