@@ -1,0 +1,25 @@
+---
+- name: Schema Backup Script
+  hosts: OFSAADB:BankingDB
+  tasks:
+
+  - name: Copy the script to Managed node
+    copy:
+     src: /scratch/gsh/ansible/GSH_DemoLab/Scripts/Schema_backup.sh
+     dest: ~/
+     mode: 0777
+    become: true
+    become_user: gsh
+
+  - name: Execute the Export command
+    shell: sh ~/Schema_backup.sh
+    become: true
+    become_user: gsh
+
+  - name: Delete the script copied on Managed node
+    file:
+     path: ~/Schema_backup.sh
+     state: absent
+    become: true
+    become_user: gsh
+...
