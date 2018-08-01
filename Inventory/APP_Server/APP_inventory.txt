@@ -1,0 +1,93 @@
+#######################################################
+#FSGBU APP INVENTORY - Starts here
+#######################################################
+
+#[FCUBS140APP]
+#10.184.159.80 APP_URL=https://whf00bxr.in.oracle.com:8004/FCJNeoWeb #FCUBS14.0 NonSOA
+
+[FCUBS123APP]
+#10.184.157.89 APP_URL=https://whf00bep.in.oracle.com:7006/FCJNeoWeb #FCUBS12.3 NonSOA
+10.184.157.159 APP_URL=https://whf00bhi.in.oracle.com:8006/FCJNeoWeb #FCUBS12.3 SOA
+
+[FCUBS121APP]
+10.184.156.41 APP_URL=http://whf00atv.in.oracle.com:7001/FCJNeoWeb #FCUBS12.1 NonSOA
+10.184.156.41 APP_URL=http://whf00atv.in.oracle.com:8003/FCJNeoWeb #FCUBS12.1 SOA
+
+[FCUBSAPP:children]
+#FCUBS140APP
+FCUBS123APP
+FCUBS121APP
+
+[FCIS124APP]
+10.184.158.86 APP_URL=https://10.184.158.86:7004/FCISNeoWeb #FCIS12.4
+
+#[FCIS123APP]
+#10.184.154.139 APP_URL=https://10.184.154.139:7004/FCISNeoWeb #FCIS12.3
+
+[FCISAPP:children]
+FCIS124APP
+#FCIS123APP
+
+#[FCPB1203]
+#10.184.134.154 APP_URL=http://10.184.134.154:7001/fcpbcust #FCPB12.0.3
+
+#[FCPB:children]
+#FCPB1203
+
+#[OBDX162APP]
+
+#[OBDXAPP:children]
+#OBDX162APP
+
+[FCPAYMENTSAPP]
+10.184.158.88 APP_URL=https://10.184.158.88:9002/FCJNeoWeb #Payments12.4
+
+[LIQUIDITYAPP]
+10.180.87.193 APP_URL=http://mum00bci.in.oracle.com:7003/GLM #OBLM14.0
+
+[LENDINGAPP]
+10.184.158.79 APP_URL=https://whf00bnh.in.oracle.com:7004/FCJNeoWeb #OBCL12.4
+
+[BankingAPP:children]
+FCUBSAPP
+FCISAPP
+#FCPB
+#OBDXAPP
+FCPAYMENTSAPP
+LIQUIDITYAPP
+LENDINGAPP
+
+
+[FCCMAPP]
+#10.184.133.68 APP_URL=http://10.184.133.68:8001/ofsaai #FCCM 6.2.4
+#10.184.132.87 APP_URL=http://10.184.132.87:7001/ofsaai/ #FCCM8.0.2+Real Time Fraud
+10.184.153.211 APP_URL=http://10.184.153.211:8001/ofsaai #FCCM 804
+10.184.158.211 APP_URL=http://whf00bsj.in.oracle.com:8001/ofsaai #FCCM 805
+
+[OFSAA]
+10.184.132.106 APP_URL=http://10.184.132.106:2020/OFSAAI #OFSAAGOLDCOPY
+10.184.153.213 APP_URL=http://10.184.153.213:8001/ofsaai #OFSAA 8.0 Customer Insight and Profitability
+#10.184.132.86 APP_URL=http://10.184.132.86:8001/ofsaai #GCM + Op Risk – 6.0
+10.184.135.202 APP_URL=http://10.184.135.202:2020/OFSAAI #CRM 4.0
+#10.184.132.61 APP_URL=http://10.184.132.61:8001/ofsaai #OFSAA 7.3.5 + ORE
+10.184.133.64 APP_URL=http://10.184.133.64:8001/ofsaai #Basel Reg Cap 6.1.2
+10.184.154.193 APP_URL=http://10.184.154.193:8001/ofsaai #IFRS9
+10.184.154.250 APP_URL=http://10.184.154.250:8080/agilereporter #RRR
+10.184.158.120 APP_URL=http://whf00bow.in.oracle.com:7001/ofsaai #Price Creation and Discovery
+#10.184.158.127 APP_URL=http://10.184.158.127:8001/ofsaai #MRMM
+
+[OFSAAAPP:children]
+FCCMAPP
+OFSAA
+
+[OBP]
+10.180.87.20 APP_URL=https://10.180.87.20:8002/com.ofss.fc.ui.view/faces/main.jspx #OBP2.5.0.2US
+#10.180.33.144 APP_URL=http://10.180.33.144:8001/integration/worklistapp #OBP2.5.0.2US - Worklist
+10.180.33.34 APP_URL=https://10.180.33.34:8002/com.ofss.fc.ui.view/faces/main.jspx #OBP2.6.1US
+10.180.33.171 APP_URL=http://10.180.33.171:8011/integration/worklistapp #OBP2.6.1US - Worklist
+10.184.158.185 APP_URL=https://10.184.158.185:8002/com.ofss.fc.ui.view/faces/main.jspx #OBP2.6.2AUD
+10.184.158.184 APP_URL=http://10.184.158.184:8001/integration/worklistapp #OBP2.6.2AUD - Worklist
+
+#######################################################
+#FSGBU APP INVENTORY - Ends here
+#######################################################
