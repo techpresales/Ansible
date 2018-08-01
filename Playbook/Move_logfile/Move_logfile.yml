@@ -1,0 +1,25 @@
+---
+- name: Schema Backup Script
+  hosts: OFSAADB:BankingDB
+  tasks:
+
+  - name: Copy the script to Managed node
+    copy:
+     src: /scratch/gsh/ansible/GSH_DemoLab/Scripts/Movelogfiles.sh
+     dest: ~/
+     mode: 0777
+    become: true
+    become_user: gsh
+
+  - name: Move Dump to Central Server
+    shell: sh ~/Movelogfiles.sh
+    become: true
+    become_user: gsh
+
+  - name: Delete the script copied on Managed node
+    file:
+     path: ~/Movelogfiles.sh
+     state: absent
+    become: true
+    become_user: gsh
+...
