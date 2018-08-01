@@ -1,0 +1,82 @@
+#######################################################
+#FSGBU DATABASE INVENTORY - Starts here
+#######################################################
+
+#[FCUBS123DB]
+#10.184.157.87   #####FCUBS12.3-OVM#####
+
+#[FCUBS124DB]
+
+#[FCUBSDB:children]
+#FCUBS123DB
+#FCUBS124DB
+
+[FCIS124DB]
+10.184.158.93   #####FCIS12.4-OVM#####
+
+[FCISDB:children]
+FCIS124DB
+
+[OBDX162DB]
+10.180.24.182   #####OBDX_OR_Cust16.2-OVM#####
+
+[OBDXDB:children]
+OBDX162DB
+
+[FCPAYMENTSDB]
+10.184.158.87   #####OBPayments12.4#####
+
+[LIQUIDITYDB]
+10.180.24.188 #####OBLM14.0#####
+
+[LENDINGDB]
+10.184.158.77 #####OBCL12.4#####
+
+[BankingDB:children]
+#FCUBSDB
+FCISDB
+OBDXDB
+FCPAYMENTSDB
+LIQUIDITYDB
+LENDINGDB
+
+[OFSFCCM804DB]
+10.184.153.211  #####OFSFCCM804 - OVM #####
+
+[OFSFCCM805DB]
+10.184.158.212  #####OFSFCCM805 - OVM #####
+
+[FCCMDB:children]
+OFSFCCM804DB
+OFSFCCM805DB
+
+[OFSIFRS8041DB]
+10.184.154.193  #####OFSIFRS8041 - OVM #####
+
+[IFRSDB:children]
+OFSIFRS8041DB
+
+[OFSPCD804DB]
+10.184.158.120  #####OFSPCD804 - OVM #####
+
+[PCDDB:children]
+OFSPCD804DB
+
+[REGREPORTING80502DB]
+10.184.158.207  #####REGREPORTING80502 - OVM #####
+
+[REGREPORTINGDB:children]
+REGREPORTING80502DB
+
+[OFSAADB:children]
+FCCMDB
+IFRSDB
+PCDDB
+REGREPORTINGDB
+
+[OBPDB]
+10.180.87.17 #####OBP2.5.0.2US#####
+
+#######################################################
+#FSGBU DATABASE INVENTORY - Ends here
+#######################################################
